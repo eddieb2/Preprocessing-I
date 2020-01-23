@@ -354,17 +354,22 @@ header .question {
     font-size: 2rem;
   }
 }
-.mainContent li {
+.mainContent ul {
   font-size: 2rem;
   color: #F8F8FF;
 }
+@media (max-width: 1872px) {
+  .mainContent ul {
+    font-size: 1.5rem;
+  }
+}
 @media (max-width: 700px) {
-  .mainContent li {
+  .mainContent ul {
     font-size: 1.8rem;
   }
 }
 @media (max-width: 500px) {
-  .mainContent li {
+  .mainContent ul {
     font-size: 1.25rem;
   }
 }

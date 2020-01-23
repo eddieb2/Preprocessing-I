@@ -61,25 +61,42 @@ html, body {
 }
 
 // Variables
-@background-color: snow;
+@background-color: white;
+@background-color-div: #F8F8FF;
+@font-color: lightcyan;
+@border-color: pink;
 @heading-font: 'Lobster', cursive;
 
 // Mixins
-.flexEvenely(){
+.flexEvenely{
 	display: flex;
 	justify-content: space-evenly;
 }
 
-.flexColumn(){
+.flexColumn{
 	display: flex;
 	flex-direction: column;
+}
+
+.threeDimension{
+	border-bottom: 2px solid white;
+	border-right: 2px solid white;
+	border-top: 1px solid white;
+	border-left: 20px solid white;
 }
 // Imports
 @import url('https://fonts.googleapis.com/css?family=Lobster&display=swap');
 
+html{
+	// background-color: @background-color;
+	background-image: url(/img/stars.jfif);
+}
 body{
 	font-size: 1rem;
-	margin: 0% 10% 0% 10%;
+	margin: 0% 20%;
+	@media (max-width: 1250px) {
+		margin: 0% 10% 0% 10%;	
+	}
 }
 	h1, h2, h3, h4, h5, h6{
 		font-size: 3rem;
@@ -93,28 +110,37 @@ body{
 		justify-content: space-between;
 		width: 100%;
 		padding: 1% 0% 1% 0%;
-		background-color: @background-color;
-		color: white;
+		// background-color: @background-color-div;
+		border-bottom: 1px solid @border-color;
+    border-radius: 30px;
 			a{
 				@media (max-width: 500px){
 					font-size: 2rem;
 				}
-			flex-basis: 22%;
-			font-size: 3rem;
-			// margin: 0% 2%;
-			text-align: center;
-			}
+				flex-basis: 22%;
+				font-size: 3rem;
+				text-align: center;
+				font-family: @heading-font;
+				color: lightcyan;
+					&:visited{
+						color: @font-color;		
+					}
+				}
 }
 	header{
 		.flexColumn();
-		align-items: center;
-		border: 2px solid gray;
+		.threeDimension();
+		border-radius: 15px;
+		align-items: center;	
+		// border-radius: 30px;
+		margin-top: 2%;
 		margin-bottom: 2%;
 		padding-bottom: 1%;
-		background-color: @background-color;
-		// color: blanchedalmond;
+		// background-color: @background-color-div;
+		color: @font-color;
 		img{
 			width: 100%;
+			display: none;
 		}
 		p{
 			font-size: 2rem;
@@ -125,59 +151,131 @@ body{
 		h1{
 			padding-top: 1%;
 		}
+		button{
+			color: @font-color;
+			background-image: url(/img/stars.jfif);
+			.threeDimension();
+			border-radius: 20px;
+		}
+		.question{
+			font-style: italic
+		}
 	}
 	.mainContent{
 		.flexEvenely();
+		border-left: 1px solid @border-color;
+    border-radius: 30px;
+    border-right: 1px solid @border-color;
 
 		flex-wrap: wrap;
 		.about{
 			flex-basis: 100%;
-		}
+			h1{
+				&:hover{
+					font-size: 8rem;
+					@media (max-width: 850px){
+						font-size: 5rem;
+					}
+					@media (max-width: 600px){						
+						font-size: 4rem;						
+					}
+					@media (max-width: 500px){
+						font-size: 3rem;
+					}
+				}
+				a{
+					&:visited{
+						color: @font-color;
+					}
+				} // .about a	
+			} // .about h1 			
+		}	
 		.education{
-			flex-basis: 29%;
+			flex-basis: 15%;
 		}
 		.skills{
-			flex-basis: 29%;
+			flex-basis: 15%;
 		}
 		.work{
-			flex-basis: 29%;
+			flex-basis: 15%;
 		}
 		.contact{
-			flex-basis: 33%;
-			h1{
-				text-align: center;
+			flex-basis: 15%;
+		}
+		.contact, .work, .skills, .education{
+			@media (max-width: 1200px){
+				flex-basis: 40%;
 			}
+			@media (max-width: 570px){
+				flex-basis: 60%;
+			}
+			text-align: center;
+		}
+		.uiLogo{
+			max-width: 100%;
+			height: 15vh;
+			border-radius: 400px;
+		}
+		#newFlex1{
+			flex-basis: 40%;
+		}
+		#newFlex2{
+			flex-basis: 40%;
+		}
+		#newFlex3{
+			flex-basis: 40%;
+		}
+		#newFlex4{
+			flex-basis: 40%;
 		}
 		div{
 			margin: 2%;
 			padding: 2%;
-			border: 2px solid black;
-			background-color: @background-color;
+			.threeDimension();
+			border-radius: 15px;
+			// background-color: @background-color-div;
+			color: @font-color;
 		}
 			h1{
 				padding-bottom: 1%;
-				font-size: 4rem;
+				font-size: 3rem;
+				text-decoration: underline;
+				// line-height: 5rem;
 				@media (max-width: 500px){
 					font-size: 2rem;
 				}
 			}
 			li{
 				font-size: 2rem;
+				color: #F8F8FF;
+				// line-height: 3rem;
+				@media (max-width: 700px){
+					font-size: 1.8rem;
+				}
 				@media (max-width: 500px){
 					font-size: 1.25rem;
 				}
 			}
 			p{
 				font-size: 2rem;
+				color: #F8F8FF;
+				@media (max-width: 700px){
+					font-size: 1.8rem;
+				}
 				@media (max-width: 500px){
 					font-size: 1.5rem;
 				}
 			}
-	} // Main Content
+ 		} // Main Content
 	
 	footer{
 		text-align: center;
 		font-size: 2rem;
 		font-style: italic;
-		border: 1px solid black;
+		border-top: 1px solid @border-color;
+		border-bottom: 1px solid @border-color;
+		border-radius: 30px;
+		margin-top: 2%;
+		// background-color: @background-color-div;
+		color: @font-color;
 	}

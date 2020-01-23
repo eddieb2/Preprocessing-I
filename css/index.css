@@ -135,6 +135,20 @@ body {
   height: 100%;
   font-size: 62.5%;
 }
+.flexEvenely {
+  display: flex;
+  justify-content: space-evenly;
+}
+.flexColumn {
+  display: flex;
+  flex-direction: column;
+}
+.threeDimension {
+  border-bottom: 2px solid white;
+  border-right: 2px solid white;
+  border-top: 1px solid white;
+  border-left: 20px solid white;
+}
 @font-face {
   font-family: 'Lobster';
   font-style: normal;
@@ -142,9 +156,17 @@ body {
   font-display: swap;
   src: local('Lobster Regular'), local('Lobster-Regular'), url(https://fonts.gstatic.com/s/lobster/v22/neILzCirqoswsqX9zoKmNg.ttf) format('truetype');
 }
+html {
+  background-image: url(/img/stars.jfif);
+}
 body {
   font-size: 1rem;
-  margin: 0% 10% 0% 10%;
+  margin: 0% 20%;
+}
+@media (max-width: 1250px) {
+  body {
+    margin: 0% 10% 0% 10%;
+  }
 }
 h1,
 h2,
@@ -170,30 +192,41 @@ nav {
   justify-content: space-between;
   width: 100%;
   padding: 1% 0% 1% 0%;
-  background-color: snow;
-  color: white;
+  border-bottom: 1px solid pink;
+  border-radius: 30px;
 }
 nav a {
   flex-basis: 22%;
   font-size: 3rem;
   text-align: center;
+  font-family: 'Lobster', cursive;
+  color: lightcyan;
 }
 @media (max-width: 500px) {
   nav a {
     font-size: 2rem;
   }
 }
+nav a:visited {
+  color: lightcyan;
+}
 header {
   display: flex;
   flex-direction: column;
+  border-bottom: 2px solid white;
+  border-right: 2px solid white;
+  border-top: 1px solid white;
+  border-left: 20px solid white;
+  border-radius: 15px;
   align-items: center;
-  border: 2px solid gray;
+  margin-top: 2%;
   margin-bottom: 2%;
   padding-bottom: 1%;
-  background-color: snow;
+  color: lightcyan;
 }
 header img {
   width: 100%;
+  display: none;
 }
 header p {
   font-size: 2rem;
@@ -206,38 +239,115 @@ header p {
 header h1 {
   padding-top: 1%;
 }
+header button {
+  color: lightcyan;
+  background-image: url(/img/stars.jfif);
+  border-bottom: 2px solid white;
+  border-right: 2px solid white;
+  border-top: 1px solid white;
+  border-left: 20px solid white;
+  border-radius: 20px;
+}
+header .question {
+  font-style: italic;
+}
 .mainContent {
   display: flex;
   justify-content: space-evenly;
+  border-left: 1px solid pink;
+  border-radius: 30px;
+  border-right: 1px solid pink;
   flex-wrap: wrap;
 }
 .mainContent .about {
   flex-basis: 100%;
 }
+.mainContent .about h1:hover {
+  font-size: 8rem;
+}
+@media (max-width: 850px) {
+  .mainContent .about h1:hover {
+    font-size: 5rem;
+  }
+}
+@media (max-width: 600px) {
+  .mainContent .about h1:hover {
+    font-size: 4rem;
+  }
+}
+@media (max-width: 500px) {
+  .mainContent .about h1:hover {
+    font-size: 3rem;
+  }
+}
+.mainContent .about h1 a:visited {
+  color: lightcyan;
+}
 .mainContent .education {
-  flex-basis: 29%;
+  flex-basis: 15%;
 }
 .mainContent .skills {
-  flex-basis: 29%;
+  flex-basis: 15%;
 }
 .mainContent .work {
-  flex-basis: 29%;
+  flex-basis: 15%;
 }
 .mainContent .contact {
-  flex-basis: 33%;
+  flex-basis: 15%;
 }
-.mainContent .contact h1 {
+.mainContent .contact,
+.mainContent .work,
+.mainContent .skills,
+.mainContent .education {
   text-align: center;
+}
+@media (max-width: 1200px) {
+  .mainContent .contact,
+  .mainContent .work,
+  .mainContent .skills,
+  .mainContent .education {
+    flex-basis: 40%;
+  }
+}
+@media (max-width: 570px) {
+  .mainContent .contact,
+  .mainContent .work,
+  .mainContent .skills,
+  .mainContent .education {
+    flex-basis: 60%;
+  }
+}
+.mainContent .uiLogo {
+  max-width: 100%;
+  height: 15vh;
+  border-radius: 400px;
+}
+.mainContent #newFlex1 {
+  flex-basis: 40%;
+}
+.mainContent #newFlex2 {
+  flex-basis: 40%;
+}
+.mainContent #newFlex3 {
+  flex-basis: 40%;
+}
+.mainContent #newFlex4 {
+  flex-basis: 40%;
 }
 .mainContent div {
   margin: 2%;
   padding: 2%;
-  border: 2px solid black;
-  background-color: snow;
+  border-bottom: 2px solid white;
+  border-right: 2px solid white;
+  border-top: 1px solid white;
+  border-left: 20px solid white;
+  border-radius: 15px;
+  color: lightcyan;
 }
 .mainContent h1 {
   padding-bottom: 1%;
-  font-size: 4rem;
+  font-size: 3rem;
+  text-decoration: underline;
 }
 @media (max-width: 500px) {
   .mainContent h1 {
@@ -246,6 +356,12 @@ header h1 {
 }
 .mainContent li {
   font-size: 2rem;
+  color: #F8F8FF;
+}
+@media (max-width: 700px) {
+  .mainContent li {
+    font-size: 1.8rem;
+  }
 }
 @media (max-width: 500px) {
   .mainContent li {
@@ -254,6 +370,12 @@ header h1 {
 }
 .mainContent p {
   font-size: 2rem;
+  color: #F8F8FF;
+}
+@media (max-width: 700px) {
+  .mainContent p {
+    font-size: 1.8rem;
+  }
 }
 @media (max-width: 500px) {
   .mainContent p {
@@ -264,5 +386,9 @@ footer {
   text-align: center;
   font-size: 2rem;
   font-style: italic;
-  border: 1px solid black;
+  border-top: 1px solid pink;
+  border-bottom: 1px solid pink;
+  border-radius: 30px;
+  margin-top: 2%;
+  color: lightcyan;
 }

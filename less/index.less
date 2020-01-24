@@ -68,17 +68,17 @@ html, body {
 @heading-font: 'Lobster', cursive;
 
 // Mixins
-.flexEvenely{
+.flexEvenely() {
 	display: flex;
 	justify-content: space-evenly;
 }
 
-.flexColumn{
+.flexColumn() {
 	display: flex;
 	flex-direction: column;
 }
 
-.threeDimension{
+.threeDimension() {
 	border-bottom: 2px solid white;
 	border-right: 2px solid white;
 	border-top: 1px solid white;
@@ -166,7 +166,7 @@ body{
 		border-left: 1px solid @border-color;
     border-radius: 30px;
     border-right: 1px solid @border-color;
-
+		background: url(/img/stars.jfif);
 		flex-wrap: wrap;
 		.about{
 			flex-basis: 100%;

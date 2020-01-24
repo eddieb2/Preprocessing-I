@@ -135,20 +135,6 @@ body {
   height: 100%;
   font-size: 62.5%;
 }
-.flexEvenely {
-  display: flex;
-  justify-content: space-evenly;
-}
-.flexColumn {
-  display: flex;
-  flex-direction: column;
-}
-.threeDimension {
-  border-bottom: 2px solid white;
-  border-right: 2px solid white;
-  border-top: 1px solid white;
-  border-left: 20px solid white;
-}
 @font-face {
   font-family: 'Lobster';
   font-style: normal;
@@ -257,6 +243,7 @@ header .question {
   border-left: 1px solid pink;
   border-radius: 30px;
   border-right: 1px solid pink;
+  background: url(/img/stars.jfif);
   flex-wrap: wrap;
 }
 .mainContent .about {

@@ -50,10 +50,234 @@ table {
 
 /* Set every element's box-sizing to border-box */
 * {
-    box-sizing: border-box;
+		box-sizing: border-box;
+		// max-width: 100%;
+		// max-height: 100%;
 }
 
 html, body {
-    height: 100%;
+		height: 100%;
+		font-size: 62.5%;
 }
 
+// Variables
+@background-color: white;
+@background-color-div: #F8F8FF;
+@font-color: lightcyan;
+@border-color: pink;
+@heading-font: 'Lobster', cursive;
+
+// Mixins
+.flexEvenely() {
+	display: flex;
+	justify-content: space-evenly;
+}
+
+.flexColumn() {
+	display: flex;
+	flex-direction: column;
+}
+
+.threeDimension() {
+	border-bottom: 2px solid white;
+	border-right: 2px solid white;
+	border-top: 1px solid white;
+	border-left: 20px solid white;
+}
+// Imports
+@import url('https://fonts.googleapis.com/css?family=Lobster&display=swap');
+
+html{
+	// background-color: @background-color;
+	background-image: url(/img/stars.jfif);
+}
+body{
+	font-size: 1rem;
+	margin: 0% 20%;
+	@media (max-width: 1250px) {
+		margin: 0% 10% 0% 10%;	
+	}
+}
+	h1, h2, h3, h4, h5, h6{
+		font-size: 3rem;
+		font-family: @heading-font;
+		@media (max-width: 500px){
+			font-size: 2rem;
+		}
+	}
+	nav{
+		display: flex;
+		justify-content: space-between;
+		width: 100%;
+		padding: 1% 0% 1% 0%;
+		// background-color: @background-color-div;
+		border-bottom: 1px solid @border-color;
+    border-radius: 30px;
+			a{
+				@media (max-width: 500px){
+					font-size: 2rem;
+				}
+				flex-basis: 22%;
+				font-size: 3rem;
+				text-align: center;
+				font-family: @heading-font;
+				color: lightcyan;
+					&:visited{
+						color: @font-color;		
+					}
+				}
+}
+	header{
+		.flexColumn();
+		.threeDimension();
+		border-radius: 15px;
+		align-items: center;	
+		// border-radius: 30px;
+		margin-top: 2%;
+		margin-bottom: 2%;
+		padding-bottom: 1%;
+		// background-color: @background-color-div;
+		color: @font-color;
+		img{
+			width: 100%;
+			display: none;
+		}
+		p{
+			font-size: 2rem;
+			@media (max-width: 500px){
+				font-size: 1.75rem;
+			}
+		}
+		h1{
+			padding-top: 1%;
+		}
+		button{
+			color: @font-color;
+			background-image: url(/img/stars.jfif);
+			.threeDimension();
+			border-radius: 20px;
+		}
+		.question{
+			font-style: italic
+		}
+	}
+	.mainContent{
+		.flexEvenely();
+		border-left: 1px solid @border-color;
+    border-radius: 30px;
+    border-right: 1px solid @border-color;
+		background: url(/img/stars.jfif);
+		flex-wrap: wrap;
+		.about{
+			flex-basis: 100%;
+			h1{
+				&:hover{
+					font-size: 8rem;
+					@media (max-width: 850px){
+						font-size: 5rem;
+					}
+					@media (max-width: 600px){						
+						font-size: 4rem;						
+					}
+					@media (max-width: 500px){
+						font-size: 3rem;
+					}
+				}
+				a{
+					&:visited{
+						color: @font-color;
+					}
+				} // .about a	
+			} // .about h1 			
+		}	
+		.education{
+			flex-basis: 15%;
+		}
+		.skills{
+			flex-basis: 15%;
+		}
+		.work{
+			flex-basis: 15%;
+		}
+		.contact{
+			flex-basis: 15%;
+		}
+		.contact, .work, .skills, .education{
+			@media (max-width: 1200px){
+				flex-basis: 40%;
+			}
+			@media (max-width: 570px){
+				flex-basis: 60%;
+			}
+			text-align: center;
+		}
+		.uiLogo{
+			max-width: 100%;
+			height: 15vh;
+			border-radius: 400px;
+		}
+		#newFlex1{
+			flex-basis: 40%;
+		}
+		#newFlex2{
+			flex-basis: 40%;
+		}
+		#newFlex3{
+			flex-basis: 40%;
+		}
+		#newFlex4{
+			flex-basis: 40%;
+		}
+		div{
+			margin: 2%;
+			padding: 2%;
+			.threeDimension();
+			border-radius: 15px;
+			// background-color: @background-color-div;
+			color: @font-color;
+		}
+			h1{
+				padding-bottom: 1%;
+				font-size: 3rem;
+				text-decoration: underline;
+				// line-height: 5rem;
+				@media (max-width: 500px){
+					font-size: 2rem;
+				}
+			}
+			ul{
+					font-size: 2rem;
+					color: #F8F8FF;
+					@media (max-width: 1872px){
+						font-size: 1.5rem;
+					}
+					@media (max-width: 700px){
+						font-size: 1.8rem;
+					}
+					@media (max-width: 500px){
+						font-size: 1.25rem;
+					}
+			}
+			p{
+				font-size: 2rem;
+				color: #F8F8FF;
+				@media (max-width: 700px){
+					font-size: 1.8rem;
+				}
+				@media (max-width: 500px){
+					font-size: 1.5rem;
+				}
+			}
+ 		} // Main Content
+	
+	footer{
+		text-align: center;
+		font-size: 2rem;
+		font-style: italic;
+		border-top: 1px solid @border-color;
+		border-bottom: 1px solid @border-color;
+		border-radius: 30px;
+		margin-top: 2%;
+		// background-color: @background-color-div;
+		color: @font-color;
+	}
